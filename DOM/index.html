@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation Tutorial</title>
+</head>
+<body>
+
+    <h1>JavaScript DOM Manipulation Tutorial</h1>
+
+    <h2>Introduction to DOM Manipulation:</h2>
+    <p>The Document Object Model (DOM) is a representation of the structure of HTML documents, allowing JavaScript to access, modify, add, or delete elements dynamically.</p>
+
+    <h2>Basic DOM Manipulation Methods:</h2>
+    <ul>
+        <li><code>getElementById()</code>: Selects an element by its unique ID attribute.</li>
+        <li><code>getElementsByClassName()</code>: Selects elements by their class name.</li>
+        <li><code>getElementsByTagName()</code>: Selects elements by their tag name.</li>
+        <li><code>querySelector()</code>: Selects the first element that matches a specified CSS selector.</li>
+        <li><code>querySelectorAll()</code>: Selects all elements that match a specified CSS selector.</li>
+    </ul>
+
+    <h2>DOM Manipulation Examples:</h2>
+
+    <script>
+        // JavaScript code with examples
+        document.addEventListener("DOMContentLoaded", function() {
+            // Changing Text Content
+            var element = document.getElementById("example1");
+            element.textContent = "New Text Content";
+
+            // Changing HTML Content
+            var element2 = document.getElementById("example2");
+            element2.innerHTML = "<p>New HTML Content</p>";
+
+            // Adding a New Element
+            var newElement = document.createElement("div");
+            newElement.textContent = "New Element";
+            document.body.appendChild(newElement);
+
+            // Removing an Element
+            var element3 = document.getElementById("example3");
+            element3.parentNode.removeChild(element3);
+
+            // Adding/Removing CSS Classes
+            var element4 = document.getElementById("example4");
+            element4.classList.add("newClass");
+            element4.classList.remove("oldClass");
+
+            // Event Handling
+            var button = document.getElementById("myButton");
+            button.addEventListener("click", function() {
+                console.log("Button clicked!");
+            });
+        });
+    </script>
+
+    <h3>Changing Text Content:</h3>
+    <p id="example1">Old Text Content</p>
+
+    <h3>Changing HTML Content:</h3>
+    <div id="example2"><p>Old HTML Content</p></div>
+
+    <h3>Adding a New Element:</h3>
+    <div id="example3">To be removed</div>
+
+    <h3>Adding/Removing CSS Classes:</h3>
+    <div id="example4" class="oldClass">Element with classes</div>
+
+    <h3>Event Handling:</h3>
+    <button id="myButton">Click me!</button>
+
+</body>
+</html>

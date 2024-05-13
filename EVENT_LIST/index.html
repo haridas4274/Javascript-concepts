@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Listeners Tutorial</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        .box:hover {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Event Listeners Tutorial</h1>
+
+    <h2>Click Event</h2>
+    <div class="box" id="clickBox">Click Me</div>
+
+    <h2>Mouse Over and Mouse Out Events</h2>
+    <div class="box" id="mouseOverBox">Mouse Over Me</div>
+
+    <h2>Key Press Event</h2>
+    <input type="text" id="keyPressInput" placeholder="Press a key">
+
+    <h2>Change Event</h2>
+    <select id="changeSelect">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+
+    <h2>Submit Event</h2>
+    <form id="submitForm">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Click Event
+        var clickBox = document.getElementById("clickBox");
+        clickBox.addEventListener("click", function() {
+            alert("Click event occurred!");
+        });
+
+        // Mouse Over and Mouse Out Events
+        var mouseOverBox = document.getElementById("mouseOverBox");
+        mouseOverBox.addEventListener("mouseover", function() {
+            mouseOverBox.textContent = "Mouse Over!";
+        });
+        mouseOverBox.addEventListener("mouseout", function() {
+            mouseOverBox.textContent = "Mouse Over Me";
+        });
+
+        // Key Press Event
+        var keyPressInput = document.getElementById("keyPressInput");
+        keyPressInput.addEventListener("keypress", function(event) {
+            console.log("Key pressed:", event.key);
+        });
+
+        // Change Event
+        var changeSelect = document.getElementById("changeSelect");
+        changeSelect.addEventListener("change", function() {
+            console.log("Selected option changed:", changeSelect.value);
+        });
+
+        // Submit Event
+        var submitForm = document.getElementById("submitForm");
+        submitForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            var formData = new FormData(submitForm);
+            console.log("Form submitted with data:", formData);
+        });
+    </script>
+
+</body>
+</html>
