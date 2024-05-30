@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Notification Example</title>
+</head>
+<body>
+
+<script>
+    function showNotification() {
+        // Check if the browser supports notifications
+        var options = {
+                body: "body content",
+                icon: "https://via.placeholder.com/64", // URL to the image
+                requireInteraction: true // Notification stays until clicked
+            };
+
+
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+
+        // Check if the user has granted permission for notifications
+        else if (Notification.permission === "granted") {
+            // If permission is granted, create a notification
+          
+            var notification = new Notification("Hello, World!",options);
+
+            notification.onclick = function() {
+                // Open Google.com when notification is clicked
+                window.open("https://www.google.com", "_blank");
+                notification.close(); // Close the notification
+            };
+
+        }
+
+        // If permission is not granted, ask the user for permission
+        else if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then(function (permission) {
+                // If the user accepts, create a notification
+                if (permission === "granted") {
+                    var notification = new Notification("Hello, World!",options);
+                }
+            });
+        }
+    }
+
+    // Show the notification when the page loads
+    window.onload = function () {
+        showNotification();
+    };
+</script>
+
+</body>
+</html>
