@@ -1,0 +1,16 @@
+<script>
+   let test = (function(){
+      const demo1 = () => {
+         alert('demo1');
+      };
+      const demo2 = () => {
+         alert('demo2');
+      };
+      return {
+         demo1: demo1,
+         demo2: demo2,
+      };
+   })();
+
+   test.demo2();
+</script>

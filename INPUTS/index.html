@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input validations</title>
+  </head>
+  <body>
+    <input type="text" class="validate-phone-number" />
+
+    <script>
+      const phoneNumberInput = document.querySelector(".validate-phone-number");    
+       phoneNumberInput.addEventListener("input", () => {
+        let value = phoneNumberInput.value;
+        const maxDigits = 10;
+        const cleanedValue = value.replace(/\D/g, "");
+        if (cleanedValue.length === 1) {
+          if (!["6", "7", "8", "9"].includes(cleanedValue)) {
+            // alert("The first digit must be 6, 7, 8, or 9.");
+            phoneNumberInput.value = "";
+            return;
+          }
+        }
+        phoneNumberInput.value = cleanedValue.slice(0, maxDigits);
+      });
+    </script>
+  </body>
+</html>
