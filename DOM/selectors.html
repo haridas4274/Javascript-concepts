@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Example</title>
+</head>
+<body>
+    <div data-attribute-name="example" class="parent">
+        <input type="radio" name="radioGroup" checked>
+        <input type="radio" name="radioGroup">
+        <input type="checkbox" checked>
+        <input type="checkbox">
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+        </select>
+    </div>
+
+    <script>
+        // Selecting elements using different selectors
+        const inputs = document.querySelectorAll('input');
+        console.log('Inputs:', inputs);
+
+        const dataElements = document.querySelectorAll('[data-attribute-name]');
+        console.log('Data Elements:', dataElements);
+
+        const radioInputs = document.querySelectorAll('input[type="radio"]');
+        console.log('Radio Inputs:', radioInputs);
+
+        const notCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
+        console.log('Not Checked Checkboxes:', notCheckedCheckboxes);
+
+        const selectElements = document.querySelectorAll('select');
+        console.log('Select Elements:', selectElements);
+
+        const parentElement = document.querySelector('input[type="radio"]').parentElement;
+        console.log('Parent Element:', parentElement);
+
+        const rootElement = document.documentElement;
+        console.log('Root Element:', rootElement);
+    </script>
+</body>
+</html>
+
+
+<!--
+1. **Input Selector**: Selects all `<input>` elements.
+   ```javascript
+   const inputs = document.querySelectorAll('input');
+   ```
+
+2. **Data Attribute Selector**: Selects elements with a specific data attribute.
+   ```javascript
+   const dataElements = document.querySelectorAll('[data-attribute-name]');
+   ```
+
+3. **Child Selector**: Selects direct child elements.
+   ```javascript
+   const childElements = document.querySelectorAll('parent > child');
+   ```
+
+4. **Radio Input Selector**: Selects all radio input elements.
+   ```javascript
+   const radioInputs = document.querySelectorAll('input[type="radio"]');
+   ```
+
+5. **Checkbox Selector**: Selects all checkbox input elements.
+   ```javascript
+   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+   ```
+
+6. **Not Checked Checkbox Selector**: Selects all checkboxes that are not checked.
+   ```javascript
+   const notCheckedCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
+   ```
+
+7. **Checked Checkbox Selector**: Selects all checkboxes that are checked.
+   ```javascript
+   const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+   ```
+
+8. **Select Tag Selector**: Selects all `<select>` elements.
+   ```javascript
+   const selectElements = document.querySelectorAll('select');
+   ```
+
+9. **Parent Element Selector**: Selects the parent element of a specific child.
+   ```javascript
+   const parentElement = document.querySelector('child-selector').parentElement;
+   ```
+
+10. **Root Parent Selector**: Selects the root element of the document.
+    ```javascript
+    const rootElement = document.documentElement;
+    ```
+
+11. **Nth-Child Selector**: Selects the nth child of a parent element.
+    ```javascript
+    const nthChild = document.querySelectorAll('parent-selector > child-selector:nth-child(n)');
+    ```
+
+12. **Class Selector**: Selects elements with a specific class.
+    ```javascript
+    const classElements = document.querySelectorAll('.class-name');
+    ```
+
+13. **ID Selector**: Selects an element with a specific ID.
+    ```javascript
+    const idElement = document.querySelector('#id-name');
+    ```
+
+14. **Attribute Selector with Value**: Selects elements with a specific attribute value.
+    ```javascript
+    const attributeElements = document.querySelectorAll('[attribute-name="value"]');
+    ```
+
+15. **Universal Selector**: Selects all elements.
+    ```javascript
+    const allElements = document.querySelectorAll('*');
+    ```
+-->
+
+
